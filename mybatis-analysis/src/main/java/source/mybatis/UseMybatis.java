@@ -6,11 +6,11 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import source.mybatis.domain.Goods;
 import source.mybatis.domain.Users;
-import source.mybatis.mappers.GoodsMapper;
+import source.mybatis.mappers.Goods2Mapper;
 import source.mybatis.mappers.UsersMapper;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -89,18 +89,28 @@ public class UseMybatis {
      */
     @Test
     public void insertList() throws InterruptedException {
-        GoodsMapper goodsMapper = sqlSession.getMapper(GoodsMapper.class);
-        ArrayList<Goods> goodsList = new ArrayList<>();
-        Random random = new Random(100);
-        for (int i = 0; i < 10; i++) {
-            for (int j = 999; j < 1999; j++) {
-                Goods list_item = new Goods();
+        Goods2Mapper goodsMapper = sqlSession.getMapper(Goods2Mapper.class);
+        Random random = new Random();
+        int good_num = random.nextInt(10000);
+        for (int i = 500; i < 1000; i++) {  // 0-50
+            ArrayList<Goods2> goodsList = new ArrayList<>();
+            for (int j = 1; j < 2000; j++) { // 999-1999
+                Goods2 list_item = new Goods2();
+                float v = random.nextFloat();
+                DecimalFormat decimalFormat = new DecimalFormat(".00");
+                String price = decimalFormat.format(v * 100);
+                list_item.setCreateTime(Tools.getDate());
+                long l = System.currentTimeMillis();
+                list_item.setStatus((l % 2 == 0 ? 1 : 0));
+                good_num = (good_num < 999) ? good_num * 10 : good_num;
+                list_item.setGoodsNum(good_num);
                 list_item.setGoodsDesc("desc" + random.nextInt());
+                list_item.setPrice(price);
                 list_item.setGoodsName("name" + random.nextInt());
+                list_item.setVersion(1);
                 goodsList.add(list_item);
             }
             goodsMapper.insertTo(goodsList);
-            Thread.sleep(1000);
         }
     }
 

@@ -1,0 +1,1 @@
+jdbc:mysql://localhost:3306/sfnotes?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC

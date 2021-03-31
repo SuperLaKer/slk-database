@@ -9,7 +9,6 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
 import source.mybatis.dbConfig.DruidDataSource;
 import source.mybatis.interceptors.ShowSql;
-import source.mybatis.mappers.UsersMapper;
 
 import javax.sql.DataSource;
 
@@ -35,8 +34,9 @@ public class MybatisUtils {
             configuration.setLogImpl(Slf4jImpl.class);
             configuration.setCacheEnabled(true);
 
-            // configuration.addMappers("source.mybatis.mappers");
-            configuration.addMapper(UsersMapper.class);
+             configuration.addMappers("source.mybatis.mappers");
+//            configuration.addMapper(UsersMapper.class);
+//            configuration.addMapper(GoodsMapper.class);
             configuration.addInterceptor(new ShowSql());
 
             // 构建
