@@ -4,23 +4,26 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>aa.slkmybatis</groupId>
-    <artifactId>slk-mybatis</artifactId>
+    <groupId>aa.slkdatabase</groupId>
+    <artifactId>slk-database</artifactId>
     <packaging>pom</packaging>
     <version>v1</version>
 
     <modules>
+        <module>slkdatabase-cluster</module>
+        <module>slkdatabase-hibernate-analysis</module>
+        <module>slkdatabase-hibernate-analysis-spring</module>
+        <module>slkdatabase-mybatis-analysis</module>
+        <module>slkdatabase-sql-analysis</module>
+        <module>slkdatabase-mybatis-spring</module>
+
+
         <module>mybatis</module>
         <module>mybatis-spring</module>
-        <module>mybatis-with-spring</module>
-        <module>mybatis-analysis</module>
-
-
         <module>hibernate-core</module>
         <module>hibernate-entitymanager</module>
-        <module>hibernate-analysis</module>
-        <module>hibernate-analysis-spring</module>
-        <module>slk-sql</module>
+
+
     </modules>
 
     <dependencies>
@@ -41,6 +44,8 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
+
+
     </dependencies>
 
     <dependencyManagement>
@@ -85,6 +90,12 @@
                 <groupId>aspectj</groupId>
                 <artifactId>aspectjweaver</artifactId>
                 <version>1.5.3</version>
+            </dependency>
+
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.22</version>
             </dependency>
 
             <dependency>

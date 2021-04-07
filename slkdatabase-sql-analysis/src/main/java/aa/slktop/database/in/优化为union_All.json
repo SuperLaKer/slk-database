@@ -1,0 +1,597 @@
+{
+  "steps": [
+    {
+      "join_preparation": {
+        "select#": 1,
+        "steps": [
+          {
+            "expanded_query": "/* select#1 */ select `goods`.`id` AS `id` from `goods` where (`goods`.`id` = 13563)"
+          }
+        ]
+      }
+    },
+    {
+      "join_preparation": {
+        "select#": 2,
+        "steps": [
+          {
+            "expanded_query": "/* select#2 */ select `goods`.`id` AS `id` from `goods` where (`goods`.`id` = 4864)"
+          }
+        ]
+      }
+    },
+    {
+      "join_preparation": {
+        "select#": 3,
+        "steps": [
+          {
+            "expanded_query": "/* select#3 */ select `goods`.`id` AS `id` from `goods` where (`goods`.`id` = 25425)"
+          }
+        ]
+      }
+    },
+    {
+      "join_preparation": {
+        "select#": 4,
+        "steps": [
+          {
+            "expanded_query": "/* select#4 */ select `goods`.`id` AS `id` from `goods` where (`goods`.`id` = 1587852)"
+          }
+        ]
+      }
+    },
+    {
+      "join_preparation": {
+        "select#": 5,
+        "steps": [
+          {
+            "expanded_query": "/* select#5 */ select `goods`.`id` AS `id` from `goods` where (`goods`.`id` = 2452)"
+          }
+        ]
+      }
+    },
+    {
+      "join_preparation": {
+        "select#": 6,
+        "steps": [
+          {
+            "expanded_query": "/* select#6 */ select `goods`.`id` AS `id` from `goods` where (`goods`.`id` = 1645374)"
+          }
+        ]
+      }
+    },
+    {
+      "join_preparation": {
+        "select#": 7,
+        "steps": [
+          {
+            "expanded_query": "/* select#7 */ select `goods`.`id` AS `id` from `goods` where (`goods`.`id` = 788793)"
+          }
+        ]
+      }
+    },
+    {
+      "join_preparation": {
+        "select#": 8,
+        "steps": [
+          {
+            "expanded_query": "/* select#8 */ select `goods`.`id` AS `id` from `goods` where (`goods`.`id` = 1345468)"
+          }
+        ]
+      }
+    },
+    {
+      "join_preparation": {
+        "select#": 9,
+        "steps": [
+          {
+            "expanded_query": "/* select#9 */ select `goods`.`id` AS `id` from `goods` where (`goods`.`id` = 1897637)"
+          }
+        ]
+      }
+    },
+    {
+      "join_preparation": {
+        "select#": 10,
+        "steps": [
+          {
+            "expanded_query": "/* select#10 */ select `goods`.`id` AS `id` from `goods` where (`goods`.`id` = 1120453)"
+          }
+        ]
+      }
+    },
+    {
+      "join_optimization": {
+        "select#": 1,
+        "steps": [
+          {
+            "condition_processing": {
+              "condition": "WHERE",
+              "original_condition": "(`goods`.`id` = 13563)",
+              "steps": [
+                {
+                  "transformation": "equality_propagation",
+                  "resulting_condition": "multiple equal(13563, `goods`.`id`)"
+                },
+                {
+                  "transformation": "constant_propagation",
+                  "resulting_condition": "multiple equal(13563, `goods`.`id`)"
+                },
+                {
+                  "transformation": "trivial_condition_removal",
+                  "resulting_condition": "multiple equal(13563, `goods`.`id`)"
+                }
+              ]
+            }
+          },
+          {
+            "substitute_generated_columns": {
+            }
+          },
+          {
+            "table_dependencies": [
+              {
+                "table": "`goods`",
+                "row_may_be_null": false,
+                "map_bit": 0,
+                "depends_on_map_bits": [
+                ]
+              }
+            ]
+          },
+          {
+            "ref_optimizer_key_uses": [
+              {
+                "table": "`goods`",
+                "field": "id",
+                "equals": "13563",
+                "null_rejecting": false
+              }
+            ]
+          },
+          {
+            "rows_estimation": [
+              {
+                "table": "`goods`",
+                "rows": 1,
+                "cost": 1,
+                "table_type": "const",
+                "empty": false
+              }
+            ]
+          },
+          {
+            "condition_on_constant_tables": "1",
+            "condition_value": true
+          },
+          {
+            "attaching_conditions_to_tables": {
+              "original_condition": "1",
+              "attached_conditions_computation": [
+              ],
+              "attached_conditions_summary": [
+              ]
+            }
+          },
+          {
+            "refine_plan": [
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "join_optimization": {
+        "select#": 2,
+        "steps": [
+          {
+            "condition_processing": {
+              "condition": "WHERE",
+              "original_condition": "(`goods`.`id` = 4864)",
+              "steps": [
+                {
+                  "transformation": "equality_propagation",
+                  "resulting_condition": "multiple equal(4864, `goods`.`id`)"
+                },
+                {
+                  "transformation": "constant_propagation",
+                  "resulting_condition": "multiple equal(4864, `goods`.`id`)"
+                },
+                {
+                  "transformation": "trivial_condition_removal",
+                  "resulting_condition": "multiple equal(4864, `goods`.`id`)"
+                }
+              ]
+            }
+          },
+          {
+            "substitute_generated_columns": {
+            }
+          },
+          {
+            "table_dependencies": [
+              {
+                "table": "`goods`",
+                "row_may_be_null": false,
+                "map_bit": 0,
+                "depends_on_map_bits": [
+                ]
+              }
+            ]
+          },
+          {
+            "ref_optimizer_key_uses": [
+              {
+                "table": "`goods`",
+                "field": "id",
+                "equals": "4864",
+                "null_rejecting": false
+              }
+            ]
+          },
+          {
+            "rows_estimation": [
+              {
+                "table": "`goods`",
+                "rows": 1,
+                "cost": 1,
+                "table_type": "const",
+                "empty": false
+              }
+            ]
+          },
+          {
+            "condition_on_constant_tables": "1",
+            "condition_value": true
+          },
+          {
+            "attaching_conditions_to_tables": {
+              "original_condition": "1",
+              "attached_conditions_computation": [
+              ],
+              "attached_conditions_summary": [
+              ]
+            }
+          },
+          {
+            "refine_plan": [
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "join_optimization": {
+        "select#": 3,
+        "steps": [
+          {
+            "condition_processing": {
+              "condition": "WHERE",
+              "original_condition": "(`goods`.`id` = 25425)",
+              "steps": [
+                {
+                  "transformation": "equality_propagation",
+                  "resulting_condition": "multiple equal(25425, `goods`.`id`)"
+                },
+                {
+                  "transformation": "constant_propagation",
+                  "resulting_condition": "multiple equal(25425, `goods`.`id`)"
+                },
+                {
+                  "transformation": "trivial_condition_removal",
+                  "resulting_condition": "multiple equal(25425, `goods`.`id`)"
+                }
+              ]
+            }
+          },
+          {
+            "substitute_generated_columns": {
+            }
+          },
+          {
+            "table_dependencies": [
+              {
+                "table": "`goods`",
+                "row_may_be_null": false,
+                "map_bit": 0,
+                "depends_on_map_bits": [
+                ]
+              }
+            ]
+          },
+          {
+            "ref_optimizer_key_uses": [
+              {
+                "table": "`goods`",
+                "field": "id",
+                "equals": "25425",
+                "null_rejecting": false
+              }
+            ]
+          },
+          {
+            "rows_estimation": [
+              {
+                "table": "`goods`",
+                "rows": 1,
+                "cost": 1,
+                "table_type": "const",
+                "empty": false
+              }
+            ]
+          },
+          {
+            "condition_on_constant_tables": "1",
+            "condition_value": true
+          },
+          {
+            "attaching_conditions_to_tables": {
+              "original_condition": "1",
+              "attached_conditions_computation": [
+              ],
+              "attached_conditions_summary": [
+              ]
+            }
+          },
+          {
+            "refine_plan": [
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "join_optimization": {
+        "select#": 4,
+        "steps": [
+          {
+            "condition_processing": {
+              "condition": "WHERE",
+              "original_condition": "(`goods`.`id` = 1587852)",
+              "steps": [
+                {
+                  "transformation": "equality_propagation",
+                  "resulting_condition": "multiple equal(1587852, `goods`.`id`)"
+                },
+                {
+                  "transformation": "constant_propagation",
+                  "resulting_condition": "multiple equal(1587852, `goods`.`id`)"
+                },
+                {
+                  "transformation": "trivial_condition_removal",
+                  "resulting_condition": "multiple equal(1587852, `goods`.`id`)"
+                }
+              ]
+            }
+          },
+          {
+            "substitute_generated_columns": {
+            }
+          },
+          {
+            "table_dependencies": [
+              {
+                "table": "`goods`",
+                "row_may_be_null": false,
+                "map_bit": 0,
+                "depends_on_map_bits": [
+                ]
+              }
+            ]
+          },
+          {
+            "ref_optimizer_key_uses": [
+              {
+                "table": "`goods`",
+                "field": "id",
+                "equals": "1587852",
+                "null_rejecting": false
+              }
+            ]
+          },
+          {
+            "rows_estimation": [
+              {
+                "table": "`goods`",
+                "rows": 1,
+                "cost": 1,
+                "table_type": "const",
+                "empty": false
+              }
+            ]
+          },
+          {
+            "condition_on_constant_tables": "1",
+            "condition_value": true
+          },
+          {
+            "attaching_conditions_to_tables": {
+              "original_condition": "1",
+              "attached_conditions_computation": [
+              ],
+              "attached_conditions_summary": [
+              ]
+            }
+          },
+          {
+            "refine_plan": [
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "join_optimization": {
+        "select#": 5,
+        "steps": [
+          {
+            "condition_processing": {
+              "condition": "WHERE",
+              "original_condition": "(`goods`.`id` = 2452)",
+              "steps": [
+                {
+                  "transformation": "equality_propagation",
+                  "resulting_condition": "multiple equal(2452, `goods`.`id`)"
+                },
+                {
+                  "transformation": "constant_propagation",
+                  "resulting_condition": "multiple equal(2452, `goods`.`id`)"
+                },
+                {
+                  "transformation": "trivial_condition_removal",
+                  "resulting_condition": "multiple equal(2452, `goods`.`id`)"
+                }
+              ]
+            }
+          },
+          {
+            "substitute_generated_columns": {
+            }
+          },
+          {
+            "table_dependencies": [
+              {
+                "table": "`goods`",
+                "row_may_be_null": false,
+                "map_bit": 0,
+                "depends_on_map_bits": [
+                ]
+              }
+            ]
+          },
+          {
+            "ref_optimizer_key_uses": [
+              {
+                "table": "`goods`",
+                "field": "id",
+                "equals": "2452",
+                "null_rejecting": false
+              }
+            ]
+          },
+          {
+            "rows_estimation": [
+              {
+                "table": "`goods`",
+                "rows": 1,
+                "cost": 1,
+                "table_type": "const",
+                "empty": false
+              }
+            ]
+          },
+          {
+            "condition_on_constant_tables": "1",
+            "condition_value": true
+          },
+          {
+            "attaching_conditions_to_tables": {
+              "original_condition": "1",
+              "attached_conditions_computation": [
+              ],
+              "attached_conditions_summary": [
+              ]
+            }
+          },
+          {
+            "refine_plan": [
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "join_optimization": {
+        "select#": 6,
+        "steps": [
+          {
+            "condition_processing": {
+              "condition": "WHERE",
+              "original_condition": "(`goods`.`id` = 1645374)",
+              "steps": [
+                {
+                  "transformation": "equality_propagation",
+                  "resulting_condition": "multiple equal(1645374, `goods`.`id`)"
+                },
+                {
+                  "transformation": "constant_propagation",
+                  "resulting_condition": "multiple equal(1645374, `goods`.`id`)"
+                },
+                {
+                  "transformation": "trivial_condition_removal",
+                  "resulting_condition": "multiple equal(1645374, `goods`.`id`)"
+                }
+              ]
+            }
+          },
+          {
+            "substitute_generated_columns": {
+            }
+          },
+          {
+            "table_dependencies": [
+              {
+                "table": "`goods`",
+                "row_may_be_null": false,
+                "map_bit": 0,
+                "depends_on_map_bits": [
+                ]
+              }
+            ]
+          },
+          {
+            "ref_optimizer_key_uses": [
+              {
+                "table": "`goods`",
+                "field": "id",
+                "equals": "1645374",
+                "null_rejecting": false
+              }
+            ]
+          },
+          {
+            "rows_estimation": [
+              {
+                "table": "`goods`",
+                "rows": 1,
+                "cost": 1,
+                "table_type": "const",
+                "empty": false
+              }
+            ]
+          },
+          {
+            "condition_on_constant_tables": "1",
+            "condition_value": true
+          },
+          {
+            "attaching_conditions_to_tables": {
+              "original_condition": "1",
+              "attached_conditions_computation": [
+              ],
+              "attached_conditions_summary": [
+              ]
+            }
+          },
+          {
+            "refine_plan": [
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "join_optimization": {
+        "select#": 7,
+        "steps": [
+          {
+            "condition_processing": {
+              "condition": "WHERE",
+              "original_condition": "(`goods`.`id` = 788793)",
+              "steps": [
+                {
+                  "transformation": "equality_propagation",
+                  "resulting_condition": "multiple equal(788793, `goods`.`id`)"
+                },
+                {
+                  "transformation
