@@ -1,0 +1,102 @@
+# 一主一从配置
+# 数据同步的原理：基于binlog
+
+
+# 开启binlog
+# 每次重启都会创建一个bin文件
+binlog_format=mixed
+log-bin=binlog
+
+# 每次读写都会刷入磁盘（缓冲区就没啥用了）
+sync-binlog=1
+
+
+# 同步哪些数据
+binlog-do-db=slklearn
+# binlog-do-db=slklearn1
+
+# 日志保存几天
+expire-logs-days=7
+
+# 不备份的数据库
+binlog-ignore-db=information_schema
+binlog-ignore-db=performation_schema
+binlog-ignore-db=sys
+
+
+================================binlog同步方式？====================
+
+SQLs   事务   binlog  提交----------------- 直接同步 ?
+SQLs   事务   binlog  commit
+SQLs   事务   binlog  rollback  ---------- 事务完成后同步 ?
+
+直接同步？事务完成后同步？怎么选？
+
+同步复制fully synchronized
+异步复制Asyn  ---------------> MySQL默认主从复制方式
+半同步复制
+
+
+---------------------------------------- 同步复制------------------------------------------------
+同步复制：主从一致性要求比较高，从持久化成功才会commit。持续时间长，比较影响性能.
+
+主: excute(sql) ---> binlog------↓--------------------------------commit
+从: ------------------------> relay-log-----> 持久化--------↑
+
+
+
+异步复制: binlog改变后直接dump给从服务. commit|rollback不受从数据库影响
+        性能比较好，但可能丢失数据
+
+
+半同步: 一主多从，确保一个从同步完成就行了
+
+半同步丢失数据  : relay-log -> 消费端ACK -> 执行(单线程) -> 刷入磁盘
+
+ACK:  没有及时ACK同步方式降级，降级为异步，异步没问题，换为半同步
+执行(单线程): binlog数据量大，来不及执行
+
+
+半同步不丢失数据:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

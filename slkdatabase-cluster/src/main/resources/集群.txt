@@ -1,8 +1,0 @@
-# 一主一从配置
-# 数据同步的原理：基于binlog
-
-
-# 开启binlog
-binlog_format=mixed
-log-bin=binlog
-
